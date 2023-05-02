@@ -1,0 +1,95 @@
+﻿<Window x:Class="WPF_18.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_18"
+        mc:Ignorable="d"
+         Title="Практическая работа №19" Height="462" Width="1424" ResizeMode="NoResize" Loaded="Window_Loaded" Initialized="Window_Initialized">
+    <Grid>
+        <DataGrid x:Name="dataGrid" IsReadOnly="True" Margin="245,27,0,0" AutoGenerateColumns="true" Height="383" VerticalAlignment="Top" HorizontalAlignment="Left" Width="1146">
+
+            <!--<DataGrid.Columns>
+                <DataGridTextColumn Width="65" Header="Фамилия" Binding="{Binding fIOSportsman}"/>
+                <DataGridTextColumn Width="40" Header="Имя" Binding="{Binding nameSportsman}"/>
+                <DataGridTextColumn Width="70" Header="Отчество" Binding="{Binding otchSportsman}"/>
+                <DataGridTextColumn Width="35" Header="Пол" Binding="{Binding gender}"/>
+                <DataGridTextColumn Width="100" Header="День рождения" Binding="{Binding birthday}"/>
+                <DataGridTextColumn Width="60" Header="Фамилия" Binding="{Binding fIOTrener}"/>
+                <DataGridTextColumn Width="90" Header="Имя треннера" Binding="{Binding nameTrener}"/>
+                <DataGridTextColumn Width="60" Header="Отчество треннера" Binding="{Binding otchTrener}"/>
+                <DataGridTextColumn Width="50" Header="Страна" Binding="{Binding country}"/>
+                <DataGridTextColumn Width="75" Header="Ретинг2018" Binding="{Binding rating2018}"/>
+                <DataGridTextColumn Width="80" Header="Рейтинг2019" Binding="{Binding rating2019}"/>
+                <DataGridTextColumn Width="80" Header="Рейтинг2020" Binding="{Binding rating2020}"/>
+                <DataGridTextColumn Width="80" Header="Рейтинг2021" Binding="{Binding rating2021}"/>
+                <DataGridTextColumn Width="80" Header="Рейтинг2022" Binding="{Binding rating2022}"/>
+                </DataGrid.Columns>-->
+
+        </DataGrid>
+        <Label Content="Учёт изделий" HorizontalAlignment="Left" Margin="245,4,0,0" VerticalAlignment="Top" Height="29"/>
+        <TabControl Margin="10,27,0,0" Height="383" VerticalAlignment="Top" HorizontalAlignment="Left" Width="230">
+            <TabItem Header="Функции">
+                <Grid Background="#FFE5E5E5">
+                    <Button x:Name="buttonAdd" Content="Добавить запись" HorizontalAlignment="Center" Margin="0,45,0,0" VerticalAlignment="Top" Width="136" Click="Button_Add" Height="30"/>
+                    <Button x:Name="buttonRead" Content="Изменить запись" HorizontalAlignment="Center" Margin="0,96,0,0" VerticalAlignment="Top" Width="136" Click="Button_Edit" Height="30"/>
+                    <Button x:Name="buttonDelete" Content="Удалить запись" HorizontalAlignment="Center" Margin="0,203,0,0" VerticalAlignment="Top" Width="136" Click="Button_Delete" Height="30"/>
+                    <Button Content="Выйти" HorizontalAlignment="Center" Margin="0,256,0,0" VerticalAlignment="Top" Width="136" Click="Exit_Click" Height="30"/>
+                    <Button Content="Вывести все данные" HorizontalAlignment="Center" Margin="0,150,0,0" VerticalAlignment="Top" Click="ViewDataGrid_Click" Width="136" Height="30"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Запросы">
+                <Grid Background="#FFE5E5E5">
+                    <ScrollViewer Height="356" VerticalAlignment="Center">
+                        <Grid Height="399" Width="207">
+                            <GroupBox Header="Выборка" Height="212" VerticalAlignment="Top">
+                                <Grid>
+                                    <Button Content="Цена продукта &gt; 50" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Width="157" Height="30" Click="Viborka1_Click"/>
+                                    <Button Content="Цена продукта &lt; 50" HorizontalAlignment="Center" Margin="0,45,0,0" VerticalAlignment="Top" Width="157" Height="30" Click="Viborka2_Click"/>
+                                    <Button Content="Работники без отчества" HorizontalAlignment="Center" VerticalAlignment="Center" Width="157" Height="30" Click="Viborka3_Click"/>
+                                    <Button Content="Кол-во изделий &gt; 300" HorizontalAlignment="Center" VerticalAlignment="Top" Width="157" Height="30" Margin="0,115,0,0" Click="Viborka4_Click"/>
+                                    <Button Content="Продукт &quot;123&quot;" HorizontalAlignment="Center" Margin="0,149,0,0" VerticalAlignment="Top" Width="157" Height="30"  Click="Viborka5_Click"/>
+                                </Grid>
+                            </GroupBox>
+                            <GroupBox Header="Обновление" Margin="0,212,0,0" Height="117" VerticalAlignment="Top">
+                                <Grid>
+                                    <Button x:Name="buttonUpdate1" Content="Обновление кол-ва&#xD;&#xA;изделий в понедельник" HorizontalAlignment="Center" Margin="0,8,0,0" VerticalAlignment="Top" Width="157" Height="39" HorizontalContentAlignment="Center" Click="Update1_Click"/>
+                                    <Button x:Name="buttonUpdate2" Content="Обновление цены&#xD;&#xA;на изделие" HorizontalAlignment="Center" Margin="0,52,0,0" VerticalAlignment="Top" Width="157" Height="39"  Click="Update2_Click" HorizontalContentAlignment="Center"/>
+                                </Grid>
+                            </GroupBox>
+                            <GroupBox Header="Удаление" Margin="0,329,0,0" Height="70" VerticalAlignment="Top">
+                                <Grid>
+                                    <Button x:Name="buttonDelete2" Content="Удаление последней строки" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Width="157" Height="30" Click="Delete1_Click"/>
+                                </Grid>
+                            </GroupBox>
+
+                        </Grid>
+                    </ScrollViewer>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <Menu HorizontalAlignment="Left" Width="196" Height="22" VerticalAlignment="Top">
+            <MenuItem Header="Операции">
+                <MenuItem Header="Добавить запись" Click="Button_Add"></MenuItem>
+                <MenuItem Header="Изменить запись" Click="Button_Edit"></MenuItem>
+                <MenuItem Header="Вывести все данные" Click="ViewDataGrid_Click"></MenuItem>
+                <MenuItem Header="Удалить запись" Click="Button_Delete"></MenuItem>
+                <Separator></Separator>
+                <MenuItem Header="Выйти" Click="Exit_Click"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Запросы">
+                <MenuItem Header="Цена продукта &gt; 50" Click="Viborka1_Click"></MenuItem>
+                <MenuItem Header="Цена продукта &lt; 50" Click="Viborka2_Click"></MenuItem>
+                <MenuItem Header="Работники без отчества" Click="Viborka3_Click"></MenuItem>
+                <MenuItem Header="Кол-во изделий > 300" Click="Viborka4_Click"></MenuItem>
+                <MenuItem Header="Продукт 123" Click="Viborka5_Click"></MenuItem>
+                <Separator></Separator>
+                <MenuItem Header="Обновление кол-ва изделий в понедельник" Click="Update1_Click"></MenuItem>
+                <MenuItem Header="Обновление цены на изделие" Click="Update2_Click"></MenuItem>
+                <Separator></Separator>
+                <MenuItem Header="Удалить последнюю запись" Click="Delete1_Click"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Справка" Click="Info_Click"></MenuItem>
+        </Menu>
+    </Grid>
+</Window>

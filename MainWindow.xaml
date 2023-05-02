@@ -70,10 +70,10 @@
         </TabControl>
         <Menu HorizontalAlignment="Left" Width="196" Height="22" VerticalAlignment="Top">
             <MenuItem Header="Операции">
-                <MenuItem Header="Добавить запись" Click="Button_Add"></MenuItem>
-                <MenuItem Header="Изменить запись" Click="Button_Edit"></MenuItem>
+                <MenuItem x:Name="MenuItemAdd" Header="Добавить запись" Click="Button_Add"></MenuItem>
+                <MenuItem x:Name="MenuItemRead" Header="Изменить запись" Click="Button_Edit"></MenuItem>
                 <MenuItem Header="Вывести все данные" Click="ViewDataGrid_Click"></MenuItem>
-                <MenuItem Header="Удалить запись" Click="Button_Delete"></MenuItem>
+                <MenuItem x:Name="MenuItemDelete" Header="Удалить запись" Click="Button_Delete"></MenuItem>
                 <Separator></Separator>
                 <MenuItem Header="Выйти" Click="Exit_Click"></MenuItem>
             </MenuItem>
@@ -84,10 +84,10 @@
                 <MenuItem Header="Кол-во изделий > 300" Click="Viborka4_Click"></MenuItem>
                 <MenuItem Header="Продукт 123" Click="Viborka5_Click"></MenuItem>
                 <Separator></Separator>
-                <MenuItem Header="Обновление кол-ва изделий в понедельник" Click="Update1_Click"></MenuItem>
-                <MenuItem Header="Обновление цены на изделие" Click="Update2_Click"></MenuItem>
+                <MenuItem x:Name="ItemMenuUpdate1" Header="Обновление кол-ва изделий в понедельник" Click="Update1_Click"></MenuItem>
+                <MenuItem x:Name="ItemMenuUpdate2"  Header="Обновление цены на изделие" Click="Update2_Click"></MenuItem>
                 <Separator></Separator>
-                <MenuItem Header="Удалить последнюю запись" Click="Delete1_Click"></MenuItem>
+                <MenuItem x:Name="ItemMenuDeleteItem" Header="Удалить последнюю запись" Click="Delete1_Click"></MenuItem>
             </MenuItem>
             <MenuItem Header="Справка" Click="Info_Click"></MenuItem>
         </Menu>

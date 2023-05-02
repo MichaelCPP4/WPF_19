@@ -37,6 +37,14 @@ namespace WPF_18
                 buttonUpdate1.IsEnabled = false;
                 buttonUpdate2.IsEnabled = false;
                 buttonAdd.IsEnabled = false;
+
+                MenuItemAdd.IsEnabled = false;
+                MenuItemRead.IsEnabled = false;
+                MenuItemDelete.IsEnabled = false;
+
+                ItemMenuDeleteItem.IsEnabled = false;
+                ItemMenuUpdate1.IsEnabled = false;
+                ItemMenuUpdate2.IsEnabled = false;
         }
 
         private void Window_Initialized(object sender, EventArgs e)
